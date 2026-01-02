@@ -36,30 +36,14 @@ class MissionControl():
         self.robot = robot
         return self
 
-    def use_left_attachment_motor(self, *left_attachment_motor):
-        self.left_attachment_motor = left_attachment_motor
-        return self
-
-    def use_right_attachment_motor(self, *right_attachment_motor):
-        self.right_attachment_motor = right_attachment_motor
-        return self
-
-    def __len__(self) -> int:
-        return len(self.missions)
-
-    def __getitem__(self, index: int) -> Mission:
-        return self.missions[index]
-
-    def __iter__(self):
-        return iter(mission.method(self.robot, self.left_attachment_motor, self.right_attachment_motor) for mission in self.missions)
-
     def run(self) -> None:
+        print([mission.number for mission in self.missions])
         chosen = hub_menu(*(mission.number for mission in self.missions))
         next(
             mission for mission in self.missions if mission.number == chosen
         ).run(self.robot, self.left_attachment_motor, self.right_attachment_motor)
-        self.missions = self[-1:] + self[:-1]
+        self.missions = self.missions[1:] + self.missions[:1]
 
     def run_all(self):
         while ...:
-            self.run
+            self.run()
