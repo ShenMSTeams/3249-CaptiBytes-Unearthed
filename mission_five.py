@@ -7,4 +7,4 @@ def MissionFive(robot:DriveBase, left_attachment_motor, right_attachment_motor):
     robot.straight(120)
     robot.straight(-135)
     robot.turn(-90,Stop.HOLD, True)
-    robot.straight(-670)
+    robot.straight(-690)

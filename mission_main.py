@@ -9,6 +9,8 @@ from mission_three import MissionThree
 from mission_four import MissionFour
 from mission_five import MissionFive
 from mission_six import MissionSix
+from mission_seven import MissionSeven
+from mission_eight import MissionEight
 
 class MyMissions():
     @Mission(1)
@@ -36,6 +38,15 @@ class MyMissions():
     @Mission(6)
     def go_mission_six(*robot):
         MissionSix(*robot)
+
+
+    @Mission(7)
+    def go_mission_seven(*robot):
+        MissionSeven(*robot)
+
+    @Mission(8)
+    def go_mission_eight(*robot):
+        MissionEight(*robot)
 
 hub = PrimeHub() 
 
