@@ -3,13 +3,11 @@ from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
 
 def MissionEight(robot:DriveBase, left_attachment_motor, right_attachment_motor):
     print("Mission Eigth")
-    print("Mission Eigth")
     robot.straight(500)
     robot.turn(24)
-    robot.straight(550)
+    robot.straight(554)
     #robot.turn(6.5)
     #robot.turn(-30) comment no
-    robot.straight(4)
     robot.turn(-23)
     left_attachment_motor.run_time(850,700,Stop.HOLD, False)
     right_attachment_motor.run_time(900,700)

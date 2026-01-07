@@ -1,14 +1,36 @@
-#turn the bot around 
+from pybricks.tools import wait
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+
 def MissionFour(robot:DriveBase, left_attachment_motor, right_attachment_motor):
-    print("Mission Four ")
-    robot.straight(-730)
-    robot.turn(-120)
-    robot.turn(150)
-    robot.turn(-20)
-    robot.straight(255)
-    robot.turn(40)
-    robot.straight(100)
-    robot.straight(-50)
-    robot.turn(-90)
-    robot.straight(400)
-        
+    print("Mission Four")
+
+    #robot.straight(350)
+    # False means don't wait for the motor to finish running before going to the next step    
+    # Move Down
+    robot.straight(475)
+    left_attachment_motor.run_time(400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(400,700)
+    wait(1000)
+    # Move up
+    left_attachment_motor.run_time(-400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(-400,700)
+    wait(500)
+    left_attachment_motor.run_time(400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(400,700)
+    wait(500)
+    left_attachment_motor.run_time(-400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(-400,700)
+    wait(500)
+    left_attachment_motor.run_time(400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(400,700)
+    wait(500)
+    left_attachment_motor.run_time(-400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(-400,700)
+    wait(500)
+    left_attachment_motor.run_time(400,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(400,700)
+    wait(500)
+    robot.straight(-60)
+    robot.turn(-35)
+    robot.straight(-400)
+    
