@@ -1,5 +1,5 @@
 #turn the bot around 
-def MissionFive(robot:DriveBase, left_attachment_motor, right_attachment_motor):
+def MissionFive(robot:DriveBase, left_attachment_motor, right_attachment_motor, *):
     print("Mission Five ")
     robot.straight(-730)
     robot.turn(-120)
