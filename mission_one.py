@@ -1,6 +1,6 @@
 from pybricks.tools import wait
 
-def MissionOne(robot:DriveBase, left_attachment_motor, right_attachment_motor, *):
+def MissionOne(robot:DriveBase, left_attachment_motor, right_attachment_motor):
     print("Mission One")
     robot.settings(straight_speed=400)
     robot.straight(500)

@@ -1,24 +1,25 @@
 from pybricks.tools import wait
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
-from distance_sensor import AndySensor
 
-def MissionTwo(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
+def MissionTwo(robot:DriveBase, left_attachment_motor, right_attachment_motor):
     print("Mission Two")
-    robot.settings(straight_speed=300)
-    robot.straight(675) #Moving to the surface brush
-    robot.straight(-250) #Knock down first brush
-    robot.straight(260) #Knock downs second brush
-    robot.turn(90)      
-    robot.straight(170) 
-    robot.turn(-90)
-    robot.drive(200,0)
-    eyes.wait_for_wall(200)
-    robot.turn(-45)
-    robot.straight(210)
-    #robot.straight(210)
-    left_attachment_motor.run_time(80,1000) #Lifts the piece
+    robot.settings(straight_speed=400)
+    robot.straight(650)#Moving to the surface brush
+    robot.straight(-450)
+    robot.straight(200)
+    #left_attachment_motor.run_time(-130,10000) #Knock down first brush
+    #robot.turn(-20)
+    #left_attachment_motor.run_time(-100,3000)
+    #obot.turn(20)
+    robot.turn(90)
+    robot.straight(100) #Knock downs second brush
+    robot.turn(-90)      
+    robot.straight(230) 
+    robot.turn(-40)
+    robot.straight(280)
+    #robot.straight(210) #Lifts the piece
     #robot.straight(-130)
-    robot.straight(-140)
+    robot.straight(-280)
     #robot.turn(140)
     #robot.turn(90)
     #robot.straight(-50)
@@ -31,9 +32,11 @@ def MissionTwo(robot:DriveBase, left_attachment_motor, right_attachment_motor, e
     #robot.turn(-50)
     #robot.straight(-100)
 
-
-    robot.turn(45)
-    robot.straight(-750)
+    robot.turn(-75)
+    robot.straight(-100)
+    robot.turn(-55)
+    robot.straight(-330)
+    left_attachment_motor.run_time(-10,4000)
 
     """robot.straight(180)
     robot.turn(48)

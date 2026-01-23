@@ -11,7 +11,6 @@ from mission_five import MissionFive
 from mission_six import MissionSix
 from mission_seven import MissionSeven
 from mission_eight import MissionEight
-from distance_sensor import AndySensor
 
 class MyMissions():
     @Mission(1)
@@ -63,11 +62,9 @@ robot.use_gyro(True)
 
 left_attachment_motor = Motor(Port.B, Direction.CLOCKWISE,  [12, 20])
 right_attachment_motor = Motor(Port.D, Direction.CLOCKWISE, [12, 20])
-eyes = AndySensor(Port.A)
 
 MissionControl(MyMissions).use_robot(
     robot,
     left_attachment_motor,
-    right_attachment_motor,
-    eyes
+    right_attachment_motor
 ).run_all()

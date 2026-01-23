@@ -1,7 +1,7 @@
 from pybricks.tools import wait
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
 
-def MissionFour(robot:DriveBase, left_attachment_motor, right_attachment_motor, *):
+def MissionFour(robot:DriveBase, left_attachment_motor, right_attachment_motor):
     print("Mission Four")
 
     #robot.straight(350)
