@@ -1,7 +1,8 @@
 from pybricks.tools import wait
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from distance_sensor import AndySensor
 
-def MissionThree(robot:DriveBase, left_attachment_motor, right_attachment_motor):
+def MissionThree(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
     print("Mission Three")
     robot.settings(straight_speed=350)
     robot.straight(680)

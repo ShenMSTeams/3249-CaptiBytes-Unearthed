@@ -1,6 +1,7 @@
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from distance_sensor import AndySensor
 
-def MissionSix(robot:DriveBase, left_attachment_motor, right_attachment_motor):
+def MissionSix(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
     print("Mission Six")
     robot.straight(690)
     robot.turn(90)

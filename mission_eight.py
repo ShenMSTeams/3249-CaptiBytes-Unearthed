@@ -1,24 +1,27 @@
 from pybricks.tools import wait
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from distance_sensor import AndySensor
 
-def MissionEight(robot:DriveBase, left_attachment_motor, right_attachment_motor):
-    print("Mission Eigth")
-    robot.straight(830)
-    robot.turn(-24)
-    left_attachment_motor.run_time(10000,5000)
-    left_attachment_motor.run_time(5000,5000)
-    left_attachment_motor.run_time(5000,4000)
-    robot.turn(51)
-    robot.straight(554)
+def MissionEight(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
+    print("Mission Eighth")
+    robot.straight(866)
+    robot.turn(-90)
+    robot.straight(44)
+    left_attachment_motor.run_time(1000,4000)
+    robot.straight(-44)
+    robot.turn(90)
+    robot.straight(-866)
+    #robot.turn(51)
+    #robot.straight(554)
     #robot.turn(6.5)
     #robot.turn(-30) comment no
-    robot.turn(-23)
-    left_attachment_motor.run_time(850,700,Stop.HOLD, False)
-    right_attachment_motor.run_time(900,700)
-    robot.straight(2)
-    robot.straight(-3)
-    robot.straight(2)
-    robot.turn(13)
+    #robot.turn(-23)
+    #left_attachment_motor.run_time(850,700,Stop.HOLD, False)
+    #right_attachment_motor.run_time(900,700)
+    #robot.straight(2)
+    #robot.straight(-3)
+    #robot.straight(2)
+    #robot.turn(13)
 
 
 

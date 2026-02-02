@@ -14,26 +14,30 @@ class Mission:
         self.__method = method
         return self
 
-    def run(self, robot, left_attachment_motor, right_attachment_motor) -> None:
-        self.__method(*robot, *left_attachment_motor, *right_attachment_motor)
+    def run(self, robot, left_attachment_motor, right_attachment_motor, eyes) -> None:
+        self.__method(robot, left_attachment_motor, right_attachment_motor, eyes)
 
     def __lt__(self, other: Mission) -> bool:
         return self.number < other.number
 
-    def method(self, robot, left_attachment_motor, right_attachment_motor):
-        return lambda: self.run(robot, left_attachment_motor, right_attachment_motor)
+    def method(self, robot, left_attachment_motor, right_attachment_motor, eyes):
+        return lambda: self.run(robot, left_attachment_motor, right_attachment_motor, eyes)
 
 class MissionControl():
     def __init__(self, missions) -> None:
         self.robot = ()
         self.left_attachment_motor = ()
         self.right_attachment_motor = ()
+        self.eyes = ()
         methods = (getattr(missions, method) for method in dir(missions))
         self.missions = [method for method in methods if type(method) is Mission]
         self.missions.sort()
 
-    def use_robot(self, *robot):
+    def use_robot(self, robot, left_attachment_motor: Motor, right_attachment_motor: Motor, eyes: AndySensor):
         self.robot = robot
+        self.left_attachment_motor = left_attachment_motor
+        self.right_attachment_motor = right_attachment_motor
+        self.eyes = eyes
         return self
 
     def run(self) -> None:
@@ -41,7 +45,7 @@ class MissionControl():
         chosen = hub_menu(*(mission.number for mission in self.missions))
         next(
             mission for mission in self.missions if mission.number == chosen
-        ).run(self.robot, self.left_attachment_motor, self.right_attachment_motor)
+        ).run(self.robot, self.left_attachment_motor, self.right_attachment_motor, self.eyes)
         self.missions = self.missions[1:] + self.missions[:1]
 
     def run_all(self):
