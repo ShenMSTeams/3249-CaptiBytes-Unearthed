@@ -4,7 +4,7 @@ from distance_sensor import AndySensor
 
 def MissionEight(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
     print("Mission Eighth")
-    robot.straight(866)
+    robot.straight(865.3)
     robot.turn(-90)
     robot.straight(44)
     left_attachment_motor.run_time(1000,4000)

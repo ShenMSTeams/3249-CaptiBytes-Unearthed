@@ -5,7 +5,7 @@ from distance_sensor import AndySensor
 def MissionThree(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
     print("Mission Three")
     robot.settings(straight_speed=350)
-    robot.straight(680)
+    robot.straight(660)
     #robot.turn(-80)
     #robot.turn(-22)
     #robot.straight(-50)
@@ -22,7 +22,7 @@ def MissionThree(robot:DriveBase, left_attachment_motor, right_attachment_motor,
     robot.straight(90)
     robot.straight(320)
     robot.turn(75,Stop.HOLD,True)
-    robot.straight(25)
+    robot.straight(15)
     left_attachment_motor.run(300)
     right_attachment_motor.run(300) # dropping of basket
     wait(2000)
@@ -31,7 +31,9 @@ def MissionThree(robot:DriveBase, left_attachment_motor, right_attachment_motor,
     wait(2000)
     robot.straight(-20)
     robot.turn(-72,Stop.HOLD,True)
-    robot.arc(400,angle=52,then=Stop.HOLD,wait=True)
+    robot.arc(375,angle=55,then=Stop.HOLD,wait=True)
+    robot.straight(20)
+    #robot.arc(400,angle=52,then=Stop.HOLD,wait=True)
     robot.straight(-112)
     robot.turn(-45,Stop.HOLD,True) # turning to get back to base
     robot.straight(50)
@@ -39,6 +41,7 @@ def MissionThree(robot:DriveBase, left_attachment_motor, right_attachment_motor,
     robot.straight(180)
     robot.turn(45,Stop.HOLD,True)
     robot.straight(600)
+    
 
 
     #robot.arc(400,angle=53,then=Stop.HOLD,wait=True)

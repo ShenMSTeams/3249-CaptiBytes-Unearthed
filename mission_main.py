@@ -11,6 +11,7 @@ from mission_five import MissionFive
 from mission_six import MissionSix
 from mission_seven import MissionSeven
 from mission_eight import MissionEight
+from mission_nine import MissionNine
 from distance_sensor import AndySensor
 
 class MyMissions():
@@ -48,6 +49,12 @@ class MyMissions():
     @Mission(8)
     def go_mission_eight(*robot):
         MissionEight(*robot)
+
+    @Mission(9)
+    def go_mission_nine(*robot):
+        MissionNine(*robot)
+        
+
 
 hub = PrimeHub() 
 
