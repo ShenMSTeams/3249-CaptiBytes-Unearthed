@@ -12,6 +12,7 @@ from mission_six import MissionSix
 from mission_seven import MissionSeven
 from mission_eight import MissionEight
 from mission_nine import MissionNine
+from mission_ten import MissionTen
 from distance_sensor import AndySensor
 
 class MyMissions():
@@ -53,13 +54,17 @@ class MyMissions():
     @Mission(9)
     def go_mission_nine(*robot):
         MissionNine(*robot)
+
+    @Mission(10)
+    def go_mission_ten(*robot):
+        MissionTen(*robot)
         
 
 
 hub = PrimeHub() 
 
 # Display voltage
-print("%s%%" % (hub.battery.voltage() / 73))
+print("Battery Value:%s%%" % (hub.battery.voltage() / 73))
 
 hub.display.orientation(Side.TOP)
 left_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
