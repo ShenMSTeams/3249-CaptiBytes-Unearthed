@@ -4,23 +4,32 @@ from distance_sensor import AndySensor
 
 def MissionTwo(robot:DriveBase, left_attachment_motor, right_attachment_motor, eyes: AndySensor):
     print("Mission Two")
-
-    # This missions main objective is M01 completing surface brusher (20 points)
-    # and M02 Map reveal uncovering the top soil (30 points)
+    # This missions main obejective, is M08 Silo (30 points)
+    robot.settings(straight_speed=400, turn_rate=100)
+    robot.straight(225)
+    #robot.turn(40)
+    #robot.straight(20)
+    #robot.turn(-40) # Realign
+    #robot.straight(79)
+    left_attachment_motor.run_time(-200,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(-200,700) #down
+    wait(500)
+    left_attachment_motor.run_time(200,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(200,700) #up
+    wait(500)
+    left_attachment_motor.run_time(-200,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(-200,700) #down
+    wait(500)
+    left_attachment_motor.run_time(200,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(200,700) #up
+    wait(500)
+    left_attachment_motor.run_time(-200,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(-200,700) #down
+    wait(500)
+    left_attachment_motor.run_time(200,700,Stop.HOLD, False) 
+    right_attachment_motor.run_time(200,700) #up
+    wait(500)
+    robot.straight(-225) # Come back to base
     
-    robot.settings(straight_speed=400)
-    robot.straight(650)#Kocking down the first surface brush
-    robot.straight(-450) # Knocking down the second brush
-    robot.straight(200)
-    robot.turn(90)
-    robot.straight(100) 
-    robot.turn(-90)  
-    robot.drive(200,0)
-    eyes.wait_for_wall(295) # Distance sensor alignment   
-    robot.turn(-40)
-    robot.straight(280)# Push the green piece to the side and push the other piece back
-    right_attachment_motor.run_time(800,800)# Lifiting the green piece
-    robot.straight(-280)
-    robot.turn(45)
-    robot.straight(-650) # Coming back to base
- 
+    
+    

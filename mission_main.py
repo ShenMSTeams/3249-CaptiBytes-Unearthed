@@ -3,19 +3,24 @@ from pybricks.hubs import PrimeHub
 from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
 from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
 from pybricks.robotics import DriveBase
-from mission_one import MissionOne
-from mission_two import MissionTwo
-from mission_three import MissionThree
-from mission_four import MissionFour
-from mission_five import MissionFive
-from mission_six import MissionSix
-from mission_seven import MissionSeven
-from mission_eight import MissionEight
-from mission_nine import MissionNine
-from mission_ten import MissionTen
+from mission_0 import MissionZero
+from mission_1 import MissionOne
+from mission_2 import MissionTwo
+from mission_3 import MissionThree
+from mission_4 import MissionFour
+from mission_5 import MissionFive
+from mission_6 import MissionSix
+from mission_7 import MissionSeven
+#from mission_eight import MissionEight
+#from mission_nine import MissionNine
+#from mission_ten import MissionTen
 from distance_sensor import AndySensor
 
 class MyMissions():
+    @Mission(0)
+    def go_mission_zero(*robot):
+        MissionZero(*robot)
+
     @Mission(1)
     def go_mission_one(*robot):
         MissionOne(*robot)
@@ -47,24 +52,24 @@ class MyMissions():
     def go_mission_seven(*robot):
         MissionSeven(*robot)
 
-    @Mission(8)
-    def go_mission_eight(*robot):
-        MissionEight(*robot)
+    #@Mission(8)
+    #def go_mission_eight(*robot):
+    #    MissionEight(*robot)
 
-    @Mission(9)
-    def go_mission_nine(*robot):
-        MissionNine(*robot)
+    #@Mission(9)
+    #def go_mission_nine(*robot):
+    #    MissionNine(*robot)
 
-    @Mission(10)
-    def go_mission_ten(*robot):
-        MissionTen(*robot)
+    #@Mission(10)
+    #def go_mission_ten(*robot):
+    #    MissionTen(*robot)
         
 
 
 hub = PrimeHub() 
 
 # Display voltage
-print("Battery Value:%s%%" % (hub.battery.voltage() / 73))
+print("Battery Value:%s%%" % (hub.battery.voltage() / 84))
 
 hub.display.orientation(Side.TOP)
 left_motor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
